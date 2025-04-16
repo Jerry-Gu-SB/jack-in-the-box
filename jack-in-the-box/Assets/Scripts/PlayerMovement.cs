@@ -6,7 +6,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float jumpForce = 10f;
-    public float maxJump = 100f;
+    public float maxJump = 20f;
+    public float minJump = 10f;
+    public float jumpMultiplier = 30f;
     
     // charged jump taken from https://discussions.unity.com/t/long-press-for-charged-jump/202543
     private float charger;
@@ -35,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (discharge)
         {
-            jumpForce = Math.Min(10 * charger,maxJump);
+            jumpForce = Math.Min(minJump + jumpMultiplier * charger, maxJump);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
             discharge = false;
