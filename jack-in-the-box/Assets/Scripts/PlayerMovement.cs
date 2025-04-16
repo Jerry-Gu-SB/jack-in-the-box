@@ -5,19 +5,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float jumpForce = 10f;
-    public float maxJump = 20f;
-    public float minJump = 10f;
-    public float jumpMultiplier = 30f;
+    public float maxJump;
+    public float minJump;
+    public float jumpMultiplier;
     
     // charged jump taken from https://discussions.unity.com/t/long-press-for-charged-jump/202543
     private float charger;
     private Boolean discharge;
+
     private Rigidbody2D rb;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 2.5f;
+        maxJump = 20f;
+        minJump = 10f;
+        jumpMultiplier = 30f;
     }
 
     
@@ -37,9 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (discharge)
         {
-            jumpForce = Math.Min(minJump + jumpMultiplier * charger, maxJump);
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
+            rb.velocity = new Vector2(rb.velocity.x, Math.Min(minJump + jumpMultiplier * charger, maxJump));
             discharge = false;
             charger = 0f;
         }
