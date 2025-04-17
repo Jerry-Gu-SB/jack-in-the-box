@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float angle;
 
     private Rigidbody2D rb;
+    public Transform arrow;
     
     void Start()
     {
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             angle += Time.deltaTime * angleMultiplier;
             angle = Math.Min(angle, 20f);
         }
-
+        arrow.rotation = Quaternion.Euler(0,0,-angle*angleMultiplier);
         if (Input.GetKey(KeyCode.Space))
         {
             charger += Time.deltaTime;
