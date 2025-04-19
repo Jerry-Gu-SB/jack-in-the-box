@@ -9,9 +9,9 @@ public class PlatformControllerStandard : MonoBehaviour
 
     public float platformFriction = 0.7f;
     public float platformBounciness = 0f;
-    
+
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         physicsMaterial2D.friction = platformFriction;
         physicsMaterial2D.bounciness = platformBounciness;
@@ -19,7 +19,7 @@ public class PlatformControllerStandard : MonoBehaviour
         Collider2D col = GetComponent<Collider2D>();
         if (col != null)
         {
-            col.sharedMaterial = null; // Force refresh
+            col.sharedMaterial = null; // force refresh to load custom values
             col.sharedMaterial = physicsMaterial2D;
         }
     }
