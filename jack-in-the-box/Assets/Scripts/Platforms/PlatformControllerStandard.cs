@@ -11,7 +11,7 @@ public class PlatformControllerStandard : MonoBehaviour
     public float platformBounciness = 0f;
 
     // Start is called before the first frame update
-    protected virtual void Start()
+    void Start()
     {
         physicsMaterial2D.friction = platformFriction;
         physicsMaterial2D.bounciness = platformBounciness;
