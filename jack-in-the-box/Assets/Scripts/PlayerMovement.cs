@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     
     // charged jump taken from https://discussions.unity.com/t/long-press-for-charged-jump/202543
     private float charger;
-    private Boolean discharge;
+    private bool discharge;
     private float angle;
 
     private Rigidbody2D rb;
