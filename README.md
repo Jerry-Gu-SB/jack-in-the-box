@@ -15,4 +15,6 @@ https://github.com/uva-cs4730-s25/team-game-jack-in-the-box/
 
 This game is a tense, skill-based platformer where players wind up a jack-in-the-box and use the spring to jump. But since the jump is randomized each time, it blends precision aiming, RNG tension, and carnival aesthetic. Navigate unpredictable leaps across treacherous stages, mastering risk versus as you platform through rage-inducing levels.
 
-
+Pop Goes the Weasel/Children's Song [Music Box] - https://www.youtube.com/watch?v=F-9MBq4tWKg  
+Jump Sound Effect - https://www.youtube.com/watch?v=RjDX4ZqnOW0  
+Jack in the Box Pop Up Sound Effect - https://www.youtube.com/watch?v=53GyI6q41fM  
