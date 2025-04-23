@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         animator.SetFloat("yVelocity", rb.velocity.y);
+        animator.SetBool("Grounded", isGrounded);
         if(Input.GetKey(KeyCode.LeftArrow)) 
         {
             angle -= Time.deltaTime * angleMultiplier;
@@ -65,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
         {
             discharge = true;
-            animator.SetTrigger("Jumping");
         }
     }
 
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             angle = 0;
         }
 
-        float zRot = rb.rotation; // this is in degrees already
+        float zRot = rb.rotation;
         zRot = Mathf.Clamp(zRot, -45f, 45f);
         rb.MoveRotation(zRot);
 
