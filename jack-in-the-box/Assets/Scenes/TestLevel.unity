@@ -555,6 +555,7 @@ MonoBehaviour:
   jumpMultiplier: 0
   angleMultiplier: 0
   arrow: {fileID: 1184148594}
+  animator: {fileID: 1602796664}
 --- !u!61 &1602796663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -610,7 +611,7 @@ Animator:
   m_GameObject: {fileID: 1602796658}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d589290207624de0a47e05d7dc1b964, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
