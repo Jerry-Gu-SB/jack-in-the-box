@@ -5,68 +5,62 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement")]
-    public float jumpForce = 20f;
-    public float angleMultiplier = 10f;
-
-    [Header("References")]
-    public Transform arrow;
-    public AudioSource SFXJump;
-    public AudioSource SFXJackInTheBoxOpen;
-
+    public float maxJump;
+    public float minJump;
+    public float jumpMultiplier;
+    public float angleMultiplier;
+    
+    // charged jump taken from https://discussions.unity.com/t/long-press-for-charged-jump/202543
+    private float charger;
+    private bool discharge;
     private float angle;
-    private Rigidbody2D rb;
 
+    private Rigidbody2D rb;
+    public Transform arrow;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 2.5f;
-    }
-
-    void Update()
-    {
-        HandleInput();
+        maxJump = 20f;
+        minJump = 10f;
+        jumpMultiplier = 30f;
+        angleMultiplier = 5f;
     }
 
     
-    public void TriggerJump()
-    {
-        ApplyJumpForce();
-        PlayJumpSounds();
-    }
-
-    private void HandleInput()
-    {
-        if (Input.GetKey(KeyCode.LeftArrow))
+    void Update()
+    {   
+        if(Input.GetKey(KeyCode.LeftArrow)) 
         {
             angle -= Time.deltaTime * angleMultiplier;
+            angle = Math.Max(angle, -20f);
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.RightArrow)) 
         {
             angle += Time.deltaTime * angleMultiplier;
+            angle = Math.Min(angle, 20f);
         }
-        if (arrow != null)
+        arrow.rotation = Quaternion.Euler(0,0,-angle*angleMultiplier);
+        if (Input.GetKey(KeyCode.Space))
         {
-            arrow.rotation = Quaternion.Euler(0, 0, -angle * angleMultiplier);
+            charger += Time.deltaTime;
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            discharge = true;
         }
     }
 
-    private void ApplyJumpForce()
+    private void FixedUpdate()
     {
-        rb.velocity = new Vector2(rb.velocity.x + angle, jumpForce);
-        angle = 0f;
+        if (discharge)
+        {
+            rb.velocity = new Vector2(rb.velocity.x+angle, Math.Min(minJump + jumpMultiplier * charger, maxJump));
+            discharge = false;
+            charger = 0f;
+            angle = 0;
+        }
     }
 
-    private void PlayJumpSounds()
-    {
-        if (SFXJump != null && !SFXJump.isPlaying)
-        {
-            SFXJump.Play();
-        }
-        if (SFXJackInTheBoxOpen != null && !SFXJackInTheBoxOpen.isPlaying)
-        {
-            SFXJackInTheBoxOpen.Play();
-        }
-    }
 }
-
