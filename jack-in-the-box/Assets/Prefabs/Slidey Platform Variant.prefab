@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slidey Platform Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5336663789990170143, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6881014243737851033, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.85

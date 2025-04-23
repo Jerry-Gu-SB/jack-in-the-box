@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8406336303675387241}
   - component: {fileID: 913026167345728353}
   - component: {fileID: 4822311428360748067}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rotating Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,4 +174,5 @@ MonoBehaviour:
   physicsMaterial2D: {fileID: 6200000, guid: 5685b64994cd9524387f354261038443, type: 2}
   platformFriction: 0.7
   platformBounciness: 0
-  rotationSpeed: 90
+  maxTiltAngle: 30
+  tiltSpeed: 1
