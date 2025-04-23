@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     public Transform arrow;
-    
+    public Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {   
+        animator.SetFloat("yVelocity", rb.velocity.y);
         if(Input.GetKey(KeyCode.LeftArrow)) 
         {
             angle -= Time.deltaTime * angleMultiplier;
@@ -45,10 +46,20 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             charger += Time.deltaTime;
+            if (jumpMultiplier * charger < maxJump)
+            {
+                animator.SetTrigger("Charge");
+            }
+            else
+            {
+                animator.SetTrigger("FullCharge");
+            }
+            
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             discharge = true;
+            animator.SetTrigger("Jumping");
         }
     }
 
