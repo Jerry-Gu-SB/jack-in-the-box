@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: platformBounciness
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3941287271222724330, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: m_Size.y
+      value: 1.956534
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941287271222724330, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.478267
+      objectReference: {fileID: 0}
     - target: {fileID: 5336663789990170143, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
       propertyPath: m_Name
       value: Bouncy Platform Variant
