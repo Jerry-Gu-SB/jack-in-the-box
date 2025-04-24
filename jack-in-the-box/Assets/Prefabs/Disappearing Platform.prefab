@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 620528000465780801}
   - component: {fileID: 7374169647288372095}
   - component: {fileID: 1165329334799410012}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Disappearing Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,3 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948819e6c51d3ef42bd0f8240ba795e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disappearDelay: 3
