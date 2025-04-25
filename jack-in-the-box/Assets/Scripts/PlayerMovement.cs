@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     public Transform arrow;
     public Animator animator;
+    public AudioSource sfxBoxOpenAudioSource;
+    public AudioSource sfxJumpBoingAudioSource;
 
     [Header("Charge State")]
     private float charger;
@@ -62,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger(jumpMultiplier * charger < maxJump ? Charge : FullCharge);
         }
 
-        if (!Input.GetKeyUp(KeyCode.Space) || !isGrounded)
+        if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
         {
             animator.ResetTrigger("Charge");
             animator.ResetTrigger("FullCharge");
@@ -74,6 +76,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (discharge)
         {
+            sfxJumpBoingAudioSource.Play();
+            sfxBoxOpenAudioSource.Play();
+            
             rb.velocity = new Vector2(rb.velocity.x+angle, Math.Min(minJump + jumpMultiplier * charger, maxJump));
             discharge = false;
             charger = 0f;
@@ -83,13 +88,11 @@ public class PlayerMovement : MonoBehaviour
         var zRot = rb.rotation;
         zRot = Mathf.Clamp(zRot, -45f, 45f);
         rb.MoveRotation(zRot);
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
-        
         groundContacts++;
         isGrounded = true;
     }
@@ -97,7 +100,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
-        
         groundContacts--;
         if (groundContacts <= 0)
         {
