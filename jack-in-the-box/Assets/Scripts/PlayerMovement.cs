@@ -32,8 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")]
     private Rigidbody2D rb;
-    private bool isGrounded;
-    private int groundContacts;
+    private bool isGrounded = false;
+    private int groundContacts = 0;
 
     // charged jump taken from https://discussions.unity.com/t/long-press-for-charged-jump/202543
 

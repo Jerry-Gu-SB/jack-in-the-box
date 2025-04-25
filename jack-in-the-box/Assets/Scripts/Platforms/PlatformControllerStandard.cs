@@ -1,32 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformControllerStandard : MonoBehaviour
+namespace Platforms
 {
-    [SerializeField]
-    private PhysicsMaterial2D physicsMaterial2D;
-
-    public float platformFriction = 0.7f;
-    public float platformBounciness = 0f;
-
-    // Start is called before the first frame update
-    void Start()
+    public class PlatformControllerStandard : MonoBehaviour
     {
-        physicsMaterial2D.friction = platformFriction;
-        physicsMaterial2D.bounciness = platformBounciness;
+        [SerializeField]
+        private PhysicsMaterial2D physicsMaterial2D;
 
-        Collider2D col = GetComponent<Collider2D>();
-        if (col != null)
+        public float platformFriction = 0.7f;
+        public float platformBounciness = 0f;
+
+        // Start is called before the first frame update
+        private void Start()
         {
+            physicsMaterial2D.friction = platformFriction;
+            physicsMaterial2D.bounciness = platformBounciness;
+
+            var col = GetComponent<Collider2D>();
+            if (col == null) return;
             col.sharedMaterial = null; // force refresh to load custom values
             col.sharedMaterial = physicsMaterial2D;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
