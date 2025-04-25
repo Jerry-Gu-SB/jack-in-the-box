@@ -6,6 +6,6 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Physics_Material_Platform
+  m_Name: Physics_Material_Rotating_Platform
   friction: 0.7
-  bounciness: 2
+  bounciness: 0

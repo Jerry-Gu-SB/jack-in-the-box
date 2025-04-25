@@ -65,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
         {
+            animator.ResetTrigger("Charge");
+            animator.ResetTrigger("FullCharge");
             discharge = true;
         }
     }

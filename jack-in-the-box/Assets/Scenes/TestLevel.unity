@@ -966,7 +966,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04000002, y: -0.3499716}
+  m_Offset: {x: -0.04000002, y: -0.33114326}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -977,7 +977,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3, y: 3.2028775}
+  m_Size: {x: 1.3, y: 3.165221}
   m_EdgeRadius: 0
 --- !u!95 &1602796664
 Animator:
@@ -1032,7 +1032,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04049182, y: -1.9781852}
+  m_Offset: {x: -0.04049182, y: -1.9169974}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1043,7 +1043,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3154054, y: 0.11593723}
+  m_Size: {x: 1.3154054, y: 0.0650239}
   m_EdgeRadius: 0
 --- !u!1 &1907456075
 GameObject:
@@ -1349,17 +1349,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 620528000465780801, guid: 5b6c5e83f42d9de469e6076caf2a1866, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 2e7823cfbcfa3984a85f1a9823180927, type: 2}
     - target: {fileID: 4691836428917005522, guid: 5b6c5e83f42d9de469e6076caf2a1866, type: 3}
       propertyPath: m_Name
       value: Disappearing Platform
       objectReference: {fileID: 0}
     - target: {fileID: 6574032907183900998, guid: 5b6c5e83f42d9de469e6076caf2a1866, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.7
+      value: 6.33
       objectReference: {fileID: 0}
     - target: {fileID: 6574032907183900998, guid: 5b6c5e83f42d9de469e6076caf2a1866, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.99
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 6574032907183900998, guid: 5b6c5e83f42d9de469e6076caf2a1866, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1393,6 +1397,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7374169647288372095, guid: 5b6c5e83f42d9de469e6076caf2a1866, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 2e7823cfbcfa3984a85f1a9823180927, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
