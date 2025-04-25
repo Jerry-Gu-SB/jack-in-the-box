@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 2.5f;
+        rb.centerOfMass = new Vector2(0, -1.5f);
         maxJump = 20f;
         minJump = 10f;
         jumpMultiplier = 30f;
