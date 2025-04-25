@@ -62,10 +62,12 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger(jumpMultiplier * charger < maxJump ? Charge : FullCharge);
         }
 
-        if (!Input.GetKeyUp(KeyCode.Space) || !isGrounded) return;
-        animator.ResetTrigger("Charge");
-        animator.ResetTrigger("FullCharge");
-        discharge = true;
+        if (!Input.GetKeyUp(KeyCode.Space) || !isGrounded)
+        {
+            animator.ResetTrigger("Charge");
+            animator.ResetTrigger("FullCharge");
+            discharge = true;
+        }
     }
 
     private void FixedUpdate()
@@ -87,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
+        
         groundContacts++;
         isGrounded = true;
     }
@@ -94,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
+        
         groundContacts--;
         if (groundContacts <= 0)
         {
