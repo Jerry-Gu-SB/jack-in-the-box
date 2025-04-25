@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private static readonly int FullCharge = Animator.StringToHash("FullCharge");
     private static readonly int Charge = Animator.StringToHash("Charge");
+    private static readonly int YVelocity = Animator.StringToHash("yVelocity");
+    private static readonly int Grounded = Animator.StringToHash("Grounded");
 
     [Header("Movement Settings")]
     public float maxJump;
@@ -23,12 +25,12 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")]
     private Rigidbody2D rb;
-    private bool isGrounded = false;
-    private int groundContacts = 0;
+    private bool isGrounded;
+    private int groundContacts;
 
     // charged jump taken from https://discussions.unity.com/t/long-press-for-charged-jump/202543
-    
-    void Start()
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 2.5f;
@@ -39,10 +41,10 @@ public class PlayerMovement : MonoBehaviour
         angleMultiplier = 5f;
     }
 
-    void Update()
+    private void Update()
     {
-        animator.SetFloat("yVelocity", rb.velocity.y);
-        animator.SetBool("Grounded", isGrounded);
+        animator.SetFloat(YVelocity, rb.velocity.y);
+        animator.SetBool(Grounded, isGrounded);
         if(Input.GetKey(KeyCode.LeftArrow)) 
         {
             angle -= Time.deltaTime * angleMultiplier;
@@ -57,25 +59,16 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             charger += Time.deltaTime;
-            if (jumpMultiplier * charger < maxJump)
-            {
-                animator.SetTrigger(Charge);
-            }
-            else
-            {
-                animator.SetTrigger(FullCharge);
-            }
+            animator.SetTrigger(jumpMultiplier * charger < maxJump ? Charge : FullCharge);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
-        {
-            animator.ResetTrigger("Charge");
-            animator.ResetTrigger("FullCharge");
-            discharge = true;
-        }
+        if (!Input.GetKeyUp(KeyCode.Space) || !isGrounded) return;
+        animator.ResetTrigger("Charge");
+        animator.ResetTrigger("FullCharge");
+        discharge = true;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (discharge)
         {
@@ -85,30 +78,26 @@ public class PlayerMovement : MonoBehaviour
             angle = 0;
         }
 
-        float zRot = rb.rotation;
+        var zRot = rb.rotation;
         zRot = Mathf.Clamp(zRot, -45f, 45f);
         rb.MoveRotation(zRot);
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            groundContacts++;
-            isGrounded = true;
-        }
+        if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
+        groundContacts++;
+        isGrounded = true;
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
+        groundContacts--;
+        if (groundContacts <= 0)
         {
-            groundContacts--;
-            if (groundContacts <= 0)
-            {
-                isGrounded = false;
-            }
+            isGrounded = false;
         }
     }
 }
