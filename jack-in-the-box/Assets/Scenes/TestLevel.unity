@@ -90105,11 +90105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6881014243737851033, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 6881014243737851033, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.93
+      value: 28.01
       objectReference: {fileID: 0}
     - target: {fileID: 6881014243737851033, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -91941,6 +91941,63 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!1001 &1105660710
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4659322021398289382, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659322021398289382, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 37.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659322021398289382, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659322021398289382, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659322021398289382, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659322021398289382, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659322021398289382, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659322021398289382, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659322021398289382, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659322021398289382, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792359494623361371, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
+      propertyPath: m_Name
+      value: Victory Platform (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
 --- !u!1001 &1173758418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92199,7 +92256,7 @@ Transform:
   m_GameObject: {fileID: 1602796658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.735, y: -0.23, z: 0}
+  m_LocalPosition: {x: -1.735, y: -0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -93093,6 +93150,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 10.18
       objectReference: {fileID: 0}
+    - target: {fileID: 8769943616947178907, guid: 156e1f5cc4c058844af7023fd0a92faa, type: 3}
+      propertyPath: platformBounciness
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -93283,4 +93344,5 @@ SceneRoots:
   - {fileID: 8088027098713539417}
   - {fileID: 8958769726462653911}
   - {fileID: 1173758418}
+  - {fileID: 1105660710}
   - {fileID: 1774290284}
