@@ -19,10 +19,15 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public AudioSource sfxBoxOpenAudioSource;
     public AudioSource sfxJumpBoingAudioSource;
+    public AudioSource sfxGroundCollisionAudioSource;
+    public AudioSource bgmPopGoesTheWeaselAudioSource;
 
     [Header("Charge State")]
+    [SerializeField]
     private float charger;
+    [SerializeField]
     private bool discharge;
+    [SerializeField]
     private float angle;
 
     [Header("Ground Check")]
@@ -57,9 +62,15 @@ public class PlayerMovement : MonoBehaviour
             angle += Time.deltaTime * angleMultiplier;
             angle = Math.Min(angle, 20f);
         }
+        
         arrow.rotation = Quaternion.Euler(0,0,-angle*angleMultiplier);
+        
         if (Input.GetKey(KeyCode.Space))
         {
+            if (!bgmPopGoesTheWeaselAudioSource.isPlaying)
+            {
+                bgmPopGoesTheWeaselAudioSource.Play();
+            }
             charger += Time.deltaTime;
             animator.SetTrigger(jumpMultiplier * charger < maxJump ? Charge : FullCharge);
         }
@@ -76,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (discharge)
         {
+            bgmPopGoesTheWeaselAudioSource.Stop();
             sfxJumpBoingAudioSource.Play();
             sfxBoxOpenAudioSource.Play();
             
@@ -95,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
         groundContacts++;
         isGrounded = true;
+        sfxGroundCollisionAudioSource.Play();
     }
 
     private void OnTriggerExit2D(Collider2D other)
