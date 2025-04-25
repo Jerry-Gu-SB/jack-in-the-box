@@ -13,12 +13,10 @@ namespace Platforms
         public BoxCollider2D boxCollider;
         public AudioSource explosionAudioSource;
         
-        private bool triggered = false;
         
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (triggered || !collision.gameObject.CompareTag("Player")) return;
-            triggered = true;
+            if (!collision.gameObject.CompareTag("Player")) return;
             StartCoroutine(DisappearAfterDelay());
         }
 

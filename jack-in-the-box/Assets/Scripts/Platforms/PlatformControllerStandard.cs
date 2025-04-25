@@ -7,6 +7,8 @@ namespace Platforms
         [SerializeField]
         private PhysicsMaterial2D physicsMaterial2D;
 
+        public AudioSource platformLandingAudioSource;
+        
         public float platformFriction = 0.7f;
         public float platformBounciness = 0f;
 
@@ -20,6 +22,14 @@ namespace Platforms
             if (col == null) return;
             col.sharedMaterial = null; // force refresh to load custom values
             col.sharedMaterial = physicsMaterial2D;
+        }
+        
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (!collision.gameObject.CompareTag("Player")) return;
+            if (platformLandingAudioSource.isPlaying) return;
+            platformLandingAudioSource.pitch = Random.Range(0.95f, 1.05f);
+            platformLandingAudioSource.Play();
         }
     }
 }

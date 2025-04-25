@@ -23,3 +23,5 @@ Audio Assets:
 Pop Goes the Weasel Music Box: https://youtu.be/F-9MBq4tWKg
 Jack in the Box Boing Sound: https://www.youtube.com/watch?v=RjDX4ZqnOW0
 Jack in the Box Pop Sound: https://www.youtube.com/watch?v=53GyI6q41fM
+Bouncy Platform Spring Sound: https://www.youtube.com/watch?v=DDpK2NZjHEc
+Standard Landing Sound: https://www.youtube.com/watch?v=FW4tiK_N9kc

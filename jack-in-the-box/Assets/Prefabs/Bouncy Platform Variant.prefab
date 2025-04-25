@@ -12,6 +12,22 @@ PrefabInstance:
       propertyPath: platformBounciness
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2176261682961262975, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: platformLandingAudioSource
+      value: 
+      objectReference: {fileID: 4895992187352151738}
+    - target: {fileID: 2626924374960247390, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626924374960247390, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626924374960247390, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d452b4cc95fca054b93c4c1800cbd70e, type: 3}
     - target: {fileID: 3941287271222724330, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
       propertyPath: m_Size.x
       value: 1.0170796
@@ -224,3 +240,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+--- !u!82 &4895992187352151738 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2626924374960247390, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+  m_PrefabInstance: {fileID: 7459855687403988196}
+  m_PrefabAsset: {fileID: 0}

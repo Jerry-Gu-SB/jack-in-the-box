@@ -12,6 +12,22 @@ PrefabInstance:
       propertyPath: platformFriction
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2626924374960247390, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626924374960247390, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: m_Pitch
+      value: 2.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626924374960247390, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626924374960247390, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ba2f0c728f426ce4a864b261629384c7, type: 3}
     - target: {fileID: 3941287271222724330, guid: 4ee557f0aee835f458000c3dcdf9ffc9, type: 3}
       propertyPath: m_Size.x
       value: 1.0108211
