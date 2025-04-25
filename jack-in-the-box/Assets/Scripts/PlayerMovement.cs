@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private static readonly int FullCharge = Animator.StringToHash("FullCharge");
+    private static readonly int Charge = Animator.StringToHash("Charge");
+
     [Header("Movement Settings")]
     public float maxJump;
     public float minJump;
@@ -56,11 +59,11 @@ public class PlayerMovement : MonoBehaviour
             charger += Time.deltaTime;
             if (jumpMultiplier * charger < maxJump)
             {
-                animator.SetTrigger("Charge");
+                animator.SetTrigger(Charge);
             }
             else
             {
-                animator.SetTrigger("FullCharge");
+                animator.SetTrigger(FullCharge);
             }
         }
 
