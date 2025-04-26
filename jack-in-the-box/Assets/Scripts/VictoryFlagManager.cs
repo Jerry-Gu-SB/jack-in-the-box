@@ -10,7 +10,7 @@ public class VictoryFlagManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Scenes/VictoryScreen");
+            SceneManager.LoadScene("Scenes/LevelSelectorScreen");
         }
     }
 }
