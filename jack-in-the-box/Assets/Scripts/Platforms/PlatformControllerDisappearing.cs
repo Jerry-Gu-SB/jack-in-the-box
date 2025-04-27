@@ -7,7 +7,7 @@ namespace Platforms
     public class PlatformControllerDisappearing : MonoBehaviour
     {
         public float disappearReappearDelay = 3f;
-
+        public AudioSource platformLandingAudioSource;
         public AudioSource sfxExplosionAudioSource;
         [SerializeField] 
         private BoxCollider2D platformBoxCollider2D;
@@ -20,6 +20,7 @@ namespace Platforms
         {
             if (triggered || !collision.gameObject.CompareTag("Player")) return;
             triggered = true;
+            platformLandingAudioSource.Play();
             StartCoroutine(DisappearAndReappearAfterDelay());
         }
 
