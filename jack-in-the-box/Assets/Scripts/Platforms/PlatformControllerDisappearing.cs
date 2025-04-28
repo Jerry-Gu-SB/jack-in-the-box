@@ -34,6 +34,7 @@ namespace Platforms
             yield return new WaitForSeconds(disappearReappearDelay);
             platformBoxCollider2D.enabled = true;
             platformTilemapRenderer.enabled = true;
+            triggered = false;
         }
     }
 }
