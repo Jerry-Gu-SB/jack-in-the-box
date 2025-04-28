@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public AudioSource sfxBoxOpenAudioSource;
     public AudioSource sfxJumpBoingAudioSource;
+    public AudioSource sfxLandingAudioSource;
+    public AudioSource bgmPopGoesTheWeaselAudioSource;
 
     [Header("Charge State")]
     private float charger;
@@ -60,6 +62,10 @@ public class PlayerMovement : MonoBehaviour
         arrow.rotation = Quaternion.Euler(0,0,-angle*angleMultiplier);
         if (Input.GetKey(KeyCode.Space))
         {
+            if (!bgmPopGoesTheWeaselAudioSource.isPlaying)
+            {
+                bgmPopGoesTheWeaselAudioSource.Play();
+            }
             charger += Time.deltaTime;
             animator.SetTrigger(jumpMultiplier * charger < maxJump ? Charge : FullCharge);
         }
@@ -76,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (discharge)
         {
+            bgmPopGoesTheWeaselAudioSource.Stop();
             sfxJumpBoingAudioSource.Play();
             sfxBoxOpenAudioSource.Play();
             
@@ -95,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.layer != LayerMask.NameToLayer("Ground")) return;
         groundContacts++;
         isGrounded = true;
+        sfxLandingAudioSource.Play();
     }
 
     private void OnTriggerExit2D(Collider2D other)

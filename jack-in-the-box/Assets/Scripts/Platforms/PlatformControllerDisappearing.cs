@@ -1,24 +1,40 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
-public class PlatformControllerDisappearing : MonoBehaviour
+namespace Platforms
 {
-    public float disappearDelay = 3f;
-    private bool triggered = false;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public class PlatformControllerDisappearing : MonoBehaviour
     {
-        if (!triggered && collision.gameObject.CompareTag("Player"))
+        public float disappearReappearDelay = 3f;
+        public AudioSource platformLandingAudioSource;
+        public AudioSource sfxExplosionAudioSource;
+        [SerializeField] 
+        private BoxCollider2D platformBoxCollider2D;
+        [SerializeField]
+        private TilemapRenderer platformTilemapRenderer;
+    
+        private bool triggered = false;
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
+            if (triggered || !collision.gameObject.CompareTag("Player")) return;
             triggered = true;
-            StartCoroutine(DisappearAfterDelay());
+            platformLandingAudioSource.Play();
+            StartCoroutine(DisappearAndReappearAfterDelay());
         }
-    }
 
-    private IEnumerator DisappearAfterDelay()
-    {
-        yield return new WaitForSeconds(disappearDelay);
-        Destroy(gameObject);
+        private IEnumerator DisappearAndReappearAfterDelay()
+        {
+            yield return new WaitForSeconds(disappearReappearDelay);
+            platformBoxCollider2D.enabled = false;
+            platformTilemapRenderer.enabled = false;
+            sfxExplosionAudioSource.Play();
+        
+            yield return new WaitForSeconds(disappearReappearDelay);
+            platformBoxCollider2D.enabled = true;
+            platformTilemapRenderer.enabled = true;
+        }
     }
 }
 

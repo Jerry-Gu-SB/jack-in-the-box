@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace Platforms
 {
-    public class PlatformControllerStandard : MonoBehaviour
+    public class PlatformControllerSlidey : MonoBehaviour
     {
         [SerializeField]
         private PhysicsMaterial2D physicsMaterial2D;
 
-        public AudioSource platformLandingAudioSource;
+        public AudioSource slidingAudioSource;
 
         public float platformFriction = 0.7f;
         public float platformBounciness = 0f;
@@ -23,12 +23,20 @@ namespace Platforms
             col.sharedMaterial = null; // force refresh to load custom values
             col.sharedMaterial = physicsMaterial2D;
         }
-
+        
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.collider.CompareTag("Player"))
             {
-                platformLandingAudioSource.Play();
+                slidingAudioSource.Play();
+            }
+        }
+        
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.collider.CompareTag("Player"))
+            {
+                slidingAudioSource.Stop();
             }
         }
     }
