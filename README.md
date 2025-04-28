@@ -24,7 +24,7 @@ Use the Left and Right arrow keys to change the angle of your jump
 Play through 8 different challenging levels which slowly introduce new mechanics to the player!  
 
 **Lessons Learned:**  
-
+Most important lesson we learned is the necessity of a good level design. During our playtesting, many people's feedbacks were primarily focused on how difficult our level was. Because the level was too difficult, players with less or no experience got frustrated easily. This led us to incrementally increase the difficulties of each level to give the players ample time to get used to the mechanics. We also learned a great amount about how prototypes emerge. Our initial vision of the game is that you would spin a crank with your mouse, and Jack would jump at a random time as you spin. This was a fun idea, but ultimately we realized that it was impossible to test for animation, as well as the difficulty of the game increased significantly. This led us to use a simple mechanic of pressing spacebar but using level design to create challenges for the player.
 
 **Art Assets:**
 Flag Asset: https://ankousse26.itch.io/free-flag-with-animation  
