@@ -345,10 +345,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Victory Platform (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8833135354598576712, guid: 6eaa1ee5f72bad64bb6a3a0740c5a9cf, type: 3}
-      propertyPath: m_Volume
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
