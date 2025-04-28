@@ -1,3 +1,7 @@
+Final project for CS 4730 - Computer Game Design Instructed by Robbie Hott. Play the game here! https://jerrygu.itch.io/jack-in-the-box  
+Everything past this is the original submission text.   
+    
+    
     Name of game
     List of all team members, including computing IDs
     GitHub link (PDF for Gradescope Only)
