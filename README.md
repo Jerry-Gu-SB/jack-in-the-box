@@ -26,4 +26,7 @@ Pop Goes the Weasel Music Box: https://youtu.be/F-9MBq4tWKg
 Jack in the Box Boing Sound: https://www.youtube.com/watch?v=RjDX4ZqnOW0  
 Jack in the Box Pop Sound: https://www.youtube.com/watch?v=53GyI6q41fM  
 Sticky Platform Sound: https://www.youtube.com/watch?v=KUOfNtoJyLw  
-Ice Platform Sound: https://www.youtube.com/watch?v=yobBISZHacg
+Ice Platform Sound: https://www.youtube.com/watch?v=yobBISZHacg  
+Button Press Sound: https://www.youtube.com/watch?v=KFNhJnp7eQ0  
+Button Hover Sound: https://www.youtube.com/watch?v=9wiI5iio-fc  
+Menu Music -  Gran Turismo 5 Soundtrack: Cana do Brazil by Yasuo Sakou: https://youtu.be/U7UgfQVy-5A
