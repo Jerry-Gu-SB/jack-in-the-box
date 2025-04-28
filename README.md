@@ -19,6 +19,7 @@ This game is a tense, skill-based platformer where players wind up a jack-in-the
 **How to play:**  
 Press and hold spacebar to charge your jump  
 Use the Left and Right arrow keys to change the angle of your jump  
+Press escape to return to level select
 
 **Content:**  
 Play through 8 different challenging levels which slowly introduce new mechanics to the player!  
