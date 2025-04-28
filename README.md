@@ -7,19 +7,30 @@
     Lessons learned - What did you learn about game development through this process?
 
 
-Jack in the Box
+# Jack in the Box
 
-Jerry Gu(ncq9fn), Joseph Choe(jc4zr), Philip Yao(hae6ds)
+By: Jerry Gu (ncq9fn), Joseph Choe (jc4zr), Philip Yao (hae6ds)
 
 https://github.com/uva-cs4730-s25/team-game-jack-in-the-box/
 
+**Game Pitch:**   
 This game is a tense, skill-based platformer where players wind up a jack-in-the-box and use the spring to jump. But since the jump is randomized each time, it blends precision aiming, RNG tension, and carnival aesthetic. Navigate unpredictable leaps across treacherous stages, mastering risk versus as you platform through rage-inducing levels.  
 
-Art Assets:
+**How to play:**  
+Press and hold spacebar to charge your jump  
+Use the Left and Right arrow keys to change the angle of your jump  
+
+**Content:**  
+Play through 8 different challenging levels which slowly introduce new mechanics to the player!  
+
+**Lessons Learned:**  
+
+
+**Art Assets:**
 Flag Asset: https://ankousse26.itch.io/free-flag-with-animation  
 Brackeys' Platformer Pack: https://brackeysgames.itch.io/brackeys-platformer-bundle  
 
-Audio Assets:
+**Audio Assets:**
 Brackeys' Platformer Pack: https://brackeysgames.itch.io/brackeys-platformer-bundle  
 Player Jump Sound: https://www.youtube.com/watch?v=DDpK2NZjHEc  
 Pop Goes the Weasel Music Box: https://youtu.be/F-9MBq4tWKg  
