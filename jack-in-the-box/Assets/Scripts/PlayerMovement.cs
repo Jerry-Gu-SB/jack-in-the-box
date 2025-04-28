@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -49,6 +50,10 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetFloat(YVelocity, rb.velocity.y);
         animator.SetBool(Grounded, isGrounded);
+        if(Input.GetKey(KeyCode.Escape)) 
+        {
+            SceneManager.LoadScene("Scenes/LevelSelectorScreen");
+        }
         if(Input.GetKey(KeyCode.LeftArrow)) 
         {
             angle -= Time.deltaTime * angleMultiplier;
